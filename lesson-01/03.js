@@ -9,15 +9,23 @@ let sum = 0;
 let i = 1;
 
 while (i <= 20) {
-  sum = sum * i;
-  console.log(`Текущее число: ${sum * i}`)
+  sum = sum + i;
+  //console.log(sum);
+  
+if ((i % 2 !== 0)) {
+  console.log(i);
+  i = i + 2;
+} else {
 
-  if ( i%2) {
-    console.log(`Текущее число: ${sum * i}`)
-  } else {
-   }
-   i++;
+}
 }
  
- console.log(`Итог: ${sum * i}`)
+ console.log(`Итог: ${sum}`)
 
+/*
+ for (let i = 1; i < 20; i++) {
+  if (i % 2 !== 0) {
+    console.log(i);
+  }
+}
+*/
