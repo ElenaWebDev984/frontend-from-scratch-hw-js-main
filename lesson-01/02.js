@@ -13,11 +13,11 @@ while (i <= 10) {
   factorial = factorial * i++;
   console.log(`Уже: ${factorial}`)
 
-  /*if (i <= 10) {
+  if (i <= 10) {
     factorial = i * i;
   } else if (i === 10) {
   }
-  else {}*/
+  else {}
 }
 i++
 //i = i * (i+1)
