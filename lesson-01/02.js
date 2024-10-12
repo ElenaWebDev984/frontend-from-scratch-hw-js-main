@@ -10,16 +10,17 @@ let factorial = 1;
 let i = 1;
 
 while (i <= 10) {
-  factorial = factorial * i++;
+  factorial = factorial * i;
   console.log(`Уже: ${factorial}`)
 
-  if (i <= 10) {
+  /*if (i <= 10) {
     factorial = i * i;
   } else if (i === 10) {
   }
-  else {}
+  else {}*/
+  i++
 }
-i++
+
 //i = i * (i+1)
 console.log(`Итоговая сумма: ${factorial}`);
 

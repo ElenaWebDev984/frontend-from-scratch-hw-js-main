@@ -33,3 +33,4 @@ console.log(`Итоговая сумма: ${sum + i}`);
     console.log(i);
   }
 }
+dkfgkgtfjrki
