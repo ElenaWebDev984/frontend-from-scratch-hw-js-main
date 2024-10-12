@@ -5,32 +5,19 @@
 */
 
 // your code
-/*
 let sum = 0;
 let i = 1;
 
-if(count%2)
-       summ+=count;
-    }while(count++<99);
+while (i <= 20) {
+  sum = sum * i;
+  console.log(`Текущее число: ${sum * i}`)
 
-while (count%2) {
-  console.log(`Текущее число: ${sum + i}`)
-
-  if ( i<= 20) {
-    
-  } else if (i === 20) {
-
+  if ( i%2) {
+    console.log(`Текущее число: ${sum * i}`)
   } else {
-
-  }
-  num++;
-} 
-console.log(`Итоговая сумма: ${sum + i}`);
-
-
-/*for (let i = 1; i < 20; i++) {
-  if (i % 2 !== 0) {
-    console.log(i);
-  }
+   }
+   i++;
 }
-dkfgkgtfjrki
+ 
+ console.log(`Итог: ${sum * i}`)
+
