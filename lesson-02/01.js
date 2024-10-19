@@ -20,10 +20,10 @@ let isAccess
 
  if (isAdmin || isVerifiedUser && hasSpecialPermission || hasTemporaryPass) {
     isAccess = true;
-    //alert('Hi! We missed you...');
+    console.log('Hi! We missed you...');
  } else {
     isAccess = false;
-    //alert('You shall not pass!');
+    console.log('You shall not pass!');
  }
 
 
