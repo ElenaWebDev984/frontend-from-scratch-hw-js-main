@@ -15,10 +15,12 @@ includesElement([1, 2, 3], 2)  // должен вернуть `true`.
 
 function includesElement(array, element) {
     for (let i = 0; i < array.length; i++) {
-        const element = array[i];
         
         if (array[i] === element) {
             return true;
         } 
     }
 }
+console.log(includesElement([1, 2, 3], 6));
+console.log(includesElement([1, 2, 3], 3));
+console.log(includesElement([1, 2, 3], 12));
