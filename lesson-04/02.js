@@ -26,6 +26,6 @@ function findUniqueElements(array, element) {
 return result;
 }
   
-  console.log(findUniqueElements([1, 2, 3, 2, 1, 4])) // [1, 2, 3, 4]);
-  console.log(findUniqueElements([1, 2, 3, 2, 1, 4])) //[1, 2, 3, 4]);
+  // console.log(findUniqueElements([1, 2, 3, 2, 1, 4])) // [1, 2, 3, 4]);
+  // console.log(findUniqueElements([8, 2, 3, 2, 8, 4])) //[8, 2, 3, 4]);
   
