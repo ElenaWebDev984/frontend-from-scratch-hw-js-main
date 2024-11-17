@@ -4,7 +4,16 @@
  */
 
 function isNumeric(str) {
-  // your code
+  // Проверяем, является ли строка пустой
+  if (str === "") {
+    return false;
+  }
+
+  // Пытаемся преобразовать строку в число
+  const num = Number(str);
+
+  // Проверяем, является ли результат числом
+  return !isNaN(num) && isFinite(num);
 }
 
 // console.log(isNumeric("123")) // Ожидаемый результат: true
