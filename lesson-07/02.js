@@ -4,8 +4,8 @@
  */
 
 function isNumeric(str) {
-  // Проверяем, является ли строка пустой
-  if (str === "") {
+  // Проверяем, является ли строка пустой или состоит только из пробелов
+  if (str.trim() === "") {
     return false;
   }
 
@@ -13,11 +13,11 @@ function isNumeric(str) {
   const num = Number(str);
 
   // Проверяем, является ли результат числом
-  return !isNaN(num) && isFinite(num);
+  return !isNaN(num);
 }
 
 // console.log(isNumeric("123")) // Ожидаемый результат: true
 // console.log(isNumeric("12.3")) // Ожидаемый результат: true
 // console.log(isNumeric("123abc")) // Ожидаемый результат: false
 // console.log(isNumeric("abc")) // Ожидаемый результат: false
-// console.log(isNumeric(" ")) // Ожидаемый результат: false
+//  console.log(isNumeric(" ")) // Ожидаемый результат: false
