@@ -24,12 +24,11 @@
 const model = {
   movies: [],
   addMovie(title, description) {
-    const id = Math.random()
+    const id = Math.random().toString(36).substr(2, 9); // Генерация уникального id
     const newMovie = { id, title, description }
     this.movies.push(newMovie)
     view.renderMovies(this.movies)
   },
-  // your code
   deleteMovie(id) {
     this.movies = this.movies.filter(movie => movie.id !== id);
     view.renderMovies(this.movies);
@@ -54,7 +53,7 @@ const view = {
       inputDescription.value = ''
     })
 
-    // your code
+    // Обработчик события для удаления фильма
     const list = document.querySelector('.list');
     list.addEventListener('click', function(event) {
       if (event.target.classList.contains('delete-button')) {
@@ -66,19 +65,32 @@ const view = {
   },
   renderMovies(movies) {
     const list = document.querySelector('.list')
-    let moviesHTML = ''
+    list.innerHTML = ''; // Очищаем список перед обновлением
 
     for (const movie of movies) {
-      moviesHTML += `
-        <li id="${movie.id}" class="movie">
-          <b class="movie-title">${movie.title}</b>
-          <p class="movie-description">${movie.description}</p>
-          <button class="delete-button" type="button">Удалить 🗑</button>
-        </li>
-      `
-    }
+      const movieItem = document.createElement('li');
+      movieItem.id = movie.id;
+      movieItem.className = 'movie';
 
-    list.innerHTML = moviesHTML
+      const movieTitle = document.createElement('b');
+      movieTitle.className = 'movie-title';
+      movieTitle.textContent = movie.title;
+
+      const movieDescription = document.createElement('p');
+      movieDescription.className = 'movie-description';
+      movieDescription.textContent = movie.description;
+
+      const deleteButton = document.createElement('button');
+      deleteButton.className = 'delete-button';
+      deleteButton.type = 'button';
+      deleteButton.textContent = 'Удалить 🗑';
+
+      movieItem.appendChild(movieTitle);
+      movieItem.appendChild(movieDescription);
+      movieItem.appendChild(deleteButton);
+
+      list.appendChild(movieItem);
+    }
   },
   displayMessage(message, isError = false) {
     const messageBox = document.querySelector('.message-box')
@@ -102,7 +114,6 @@ const controller = {
       view.displayMessage('Заполните все поля!', true)
     }
   },
-  // your code
   deleteMovie(id) {
     model.deleteMovie(id);
     view.displayMessage('Фильм успешно удалён!');
